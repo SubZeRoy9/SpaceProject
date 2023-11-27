@@ -1,0 +1,16 @@
+/* Style the card container */
+.planetcard {
+    width: 900px; /* Adjust the width of the card as needed */
+    border: 1px solid #800080; /* Example border style */
+    border-radius: 16px; /* Example border-radius */
+    overflow: hidden; /* Hide any content that overflows */
+    background-color: #008080;
+  }
+  
+  /* Style the image inside the card */
+  .planetimg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  

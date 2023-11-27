@@ -1,0 +1,42 @@
+/* NavbarStyles.css */
+
+/* Custom styles for Navbar */
+.bg-body-tertiary {
+    background-color: #f0f0f0; /* Replace with your desired background color */
+    padding: 10px 0; /* Adjust padding as needed */
+  }
+  
+  /* Custom styles for Navbar.Brand */
+  .navbar-brand {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold; /* Adjust font weight */
+    color: #333; /* Adjust text color */
+  }
+  
+  /* Custom styles for Navbar.Toggle (Hamburger icon) */
+  .navbar-toggler {
+    border: none; /* Remove border */
+  }
+  
+  /* Custom styles for Navbar.Collapse */
+  .navbar-collapse {
+    justify-content: flex-end; /* Align items to the right */
+  }
+  
+  /* Custom styles for Navbar.Text */
+  .navbar-text {
+    font-size: 16px; /* Adjust font size */
+    color: #555; /* Adjust text color */
+  }
+  
+  /* Custom styles for Navbar.Text link */
+  .navbar-text a {
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Adjust link color */
+  }
+  
+  /* Custom styles for Navbar.Text link on hover */
+  .navbar-text a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
