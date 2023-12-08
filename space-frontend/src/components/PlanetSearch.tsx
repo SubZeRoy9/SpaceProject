@@ -10,8 +10,8 @@ import {
 } from "mdb-react-ui-kit";
 
 interface Planet {
-  planet_name: string;
-  // Add other properties if needed
+  idplanet: number;
+  name: string;
 }
 
 function PlanetSearch() {
@@ -24,9 +24,7 @@ function PlanetSearch() {
 
   const handleSearchSubmit = async () => {
     try {
-      const response = await fetch(
-        `http://localhost:3001/planets?searchTerm=${searchTerm}`
-      );
+      const response = await fetch("/api/planets?searchTerm=Mercury");
       const data = await response.json();
       console.log("Search term:", searchTerm);
       console.log("Search results:", data);
@@ -78,7 +76,7 @@ function PlanetSearch() {
           />
           <datalist id="planetOptions">
             {validOptions.map((planet) => (
-              <option key={planet.planet_name} value={planet.planet_name} />
+              <option key={planet.name} value={planet.name} />
             ))}
           </datalist>
           <MDBBtn onClick={handleSearchSubmit}>Search</MDBBtn>

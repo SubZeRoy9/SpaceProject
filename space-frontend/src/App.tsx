@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Nav from "./components/Nav";
 import PlanetInfo from "./components/PlanetInfo";
+import Add from "./components/Add";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/add" element={<Add />} />
         </Routes>
       </Router>
     </>
