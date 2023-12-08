@@ -1,0 +1,14 @@
+/* Applies styles to the APOD image */
+.apod-container {
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Center vertically within the viewport */
+    max-width: 80%; /* Adjust the maximum width as needed (e.g., 80%) */
+    margin: 0 auto; /* Center horizontally */
+  }
+    
+    /* Apply styles to the APOD image */
+    .apod-image {
+      max-width: 60%; /* Maintain the image's aspect ratio */
+      height: auto;
+    }

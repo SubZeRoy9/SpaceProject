@@ -1,7 +1,8 @@
+import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import PlanetSearch from "./PlanetSearch";
 import { Link } from "react-router-dom";
+import "./PlanetInfo.css"; // Import the provided CSS file
 
 interface Planet {
   idplanet: number;
@@ -24,19 +25,18 @@ function PlanetInfo() {
         console.log(err);
       }
     };
-
     fetchAllPlanets();
   }, []);
 
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (idplanet: number) => {
     try {
-      console.log("Deleting planet with ID:", id);
-      await axios.delete(`http://localhost:8800/planet/${id}`);
-      console.log("Deletion successful!");
-      // Update state or UI if needed
-      window.location.reload();
+      await axios.delete(`http://localhost:8800/planets/${idplanet}`);
+      // Update the state without a page reload
+      setPlanets((prevPlanets) =>
+        prevPlanets?.filter((planet) => planet.idplanet !== idplanet)
+      );
     } catch (err) {
-      console.error("Error deleting planet:", err);
+      console.log("This is the error" + err);
     }
   };
 
@@ -46,23 +46,35 @@ function PlanetInfo() {
       <div className="planets">
         {planets &&
           planets.map((planet) => (
-            <div className="planet" key={planet.idplanet}>
+            <div className="planetcard" key={planet.idplanet}>
               <h2>{planet.name}</h2>
               <p>Number of moons: {planet.num_moons}</p>
               <p>{planet.fact}</p>
-              {planet.image && <img src={planet.image} alt="" />}
+              {planet.image && (
+                <img className="planetimg" src={planet.image} alt="" />
+              )}
               <button
                 className="delete"
-                onClick={() => handleDelete(planet.idplanet)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleDelete(planet.idplanet);
+                }}
               >
                 Delete
               </button>
-              <button>Update</button>
+              <button className="update">
+                <Link
+                  to={`/update/${planet.idplanet}`}
+                  style={{ color: "inherit", textDecoration: "none" }}
+                >
+                  Update
+                </Link>
+              </button>
             </div>
           ))}
       </div>
       <button>
-        <Link to="/add">Add new book</Link>
+        <Link to="/add">Add new planet</Link>
       </button>
     </>
   );

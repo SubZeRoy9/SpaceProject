@@ -1,7 +1,7 @@
-import PlanetSearch from "./PlanetSearch";
+import PlanetSearch from "./PlanetPage/PlanetSearch";
 import "./Home.css";
 import { Carousel, Navbar } from "react-bootstrap";
-import PlanetInfo from "./PlanetInfo";
+import PlanetInfo from "./PlanetPage/PlanetInfo";
 
 function Home() {
   return (

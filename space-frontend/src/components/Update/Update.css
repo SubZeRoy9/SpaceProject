@@ -1,0 +1,50 @@
+/* Update.css */
+
+.form {
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #800080;
+    border-radius: 16px;
+    background-color: #008080;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #fff;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #800080;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+  button {
+    background-color: #800080;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0C090D;
+  }
+  

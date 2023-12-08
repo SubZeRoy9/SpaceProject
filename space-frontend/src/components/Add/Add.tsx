@@ -6,17 +6,21 @@ import "./Add.css";
 function Add() {
   const [planet, setPlanet] = useState({
     name: "",
-    num_moons: "",
+    num_moons: 0,
     fact: "",
   });
 
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setPlanet((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleClick = async (e) => {
+  const handleClick = async (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     e.preventDefault();
     try {
       await axios.post("http://localhost:8800/planets", planet);
@@ -29,7 +33,7 @@ function Add() {
   return (
     <>
       <div className="form">
-        <h1>Add new book</h1>
+        <h1>Add new planet</h1>
         <input
           type="text"
           placeholder="name"
@@ -37,7 +41,7 @@ function Add() {
           name="name"
         />
         <input
-          type="text"
+          type="number"
           placeholder="num_moons"
           onChange={handleChange}
           name="num_moons"

@@ -8,6 +8,7 @@ import {
   MDBBtn,
   MDBInput,
 } from "mdb-react-ui-kit";
+import { Link } from "react-router-dom";
 
 interface Planet {
   idplanet: number;
@@ -64,24 +65,14 @@ function PlanetSearch() {
       <MDBCardBody>
         <MDBCardText>
           Embark on an astronomical journey with our innovative planet search
-          tool. Uncover the mysteries of our closest neighbors.
+          tool. Uncover the mysteries of our closest neighbors. <br />
+          <br />
+          Click button to see NASA's Astronomical image of the day.
         </MDBCardText>
-        <div className="search-bar">
-          <MDBInput
-            type="text"
-            label="Search planets"
-            value={searchTerm}
-            onChange={handleSearchChange}
-            list="planetOptions"
-          />
-          <datalist id="planetOptions">
-            {validOptions.map((planet) => (
-              <option key={planet.name} value={planet.name} />
-            ))}
-          </datalist>
-          <MDBBtn onClick={handleSearchSubmit}>Search</MDBBtn>
-        </div>
-        <MDBBtn>Explore</MDBBtn>
+
+        <MDBBtn>
+          <Link to="/apod">Apod</Link>
+        </MDBBtn>
       </MDBCardBody>
     </MDBCard>
   );

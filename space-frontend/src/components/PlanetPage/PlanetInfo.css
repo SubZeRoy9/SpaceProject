@@ -1,0 +1,45 @@
+/* styles.css */
+
+.planets {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.planetcard {
+  width: 100%;
+  border: 1px solid #800080;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #008080;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.planetcard h2,
+.planetcard p {
+  color: #fff;
+  margin: 8px;
+}
+
+.planetimg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid #800080;
+}
+
+.delete,
+.update {
+  background-color: #800080;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  margin-right: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete:hover,
+.update:hover {
+  background-color: #c82333;
+}
